@@ -8,7 +8,7 @@ export type SceneOperation =
   | {
       type: "update_object";
       objectId: string;
-      changes: Partial<Pick<SceneObject, "position" | "rotation" | "size" | "category">>>;
+     changes: Partial<Pick<SceneObject, "position" | "rotation" | "size" | "category">>;
     }
   | {
       type: "remove_object";
