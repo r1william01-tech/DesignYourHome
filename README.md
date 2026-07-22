@@ -41,7 +41,7 @@ No secrets or external services are required for Milestone 0.
 ## Source layout
 
 ```text
-app/                  Next.js application shell
+app/                  Next.js application shell and workspace routes
 lib/scene/             Persistent digital-twin contracts and operation boundaries
 public/                Static assets
 PRODUCT_VISION.md      Product constitution

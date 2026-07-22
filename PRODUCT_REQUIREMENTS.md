@@ -25,8 +25,8 @@ This document turns the product constitution into traceable engineering requirem
 
 | ID | Requirement | Status |
 | --- | --- | --- |
-| M1-001 | Accept arbitrary PDF, JPG, and PNG floor plans where supported. | Planned |
-| M1-002 | Visibly render the exact uploaded source. | Planned |
+| M1-001 | Accept arbitrary PDF, JPG, and PNG floor plans where supported. | Implemented |
+| M1-002 | Visibly render the exact uploaded source. | Implemented |
 | M1-003 | Establish structured walls, rooms, doors, and windows from the upload. | Planned |
 | M1-004 | Show detected interpretation for user confirmation and correction. | Planned |
 | M1-005 | Persist confirmed architecture as the project's source of truth. | Planned |
