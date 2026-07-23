@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ChangeEvent, useEffect, useState } from "react";
+import ArchitectureReview from "./ArchitectureReview";
 
 const maximumFileSize = 25 * 1024 * 1024;
 const acceptedFileTypes = ["application/pdf", "image/jpeg", "image/png"];
@@ -23,6 +24,7 @@ function formatFileSize(bytes: number) {
 export default function WorkspacePage() {
   const [uploadedPlan, setUploadedPlan] = useState<UploadedPlan | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [reviewMode, setReviewMode] = useState(false);
 
   useEffect(() => {
     return () => {
@@ -62,6 +64,18 @@ export default function WorkspacePage() {
   function clearUpload() {
     setUploadedPlan(null);
     setError(null);
+    setReviewMode(false);
+  }
+
+  if (uploadedPlan && reviewMode) {
+    return (
+      <ArchitectureReview
+        fileName={uploadedPlan.file.name}
+        previewUrl={uploadedPlan.previewUrl}
+        kind={uploadedPlan.kind}
+        onBack={() => setReviewMode(false)}
+      />
+    );
   }
 
   return (
@@ -130,10 +144,10 @@ export default function WorkspacePage() {
             <div className="next-step-card">
               <div>
                 <span className="eyebrow">Next in the vertical slice</span>
-                <h3>Confirm the detected architecture</h3>
-                <p>The parser and correction tools will be added next. Until then, this source preview is intentionally the only active interpretation step.</p>
+                <h3>Mark the architecture for review</h3>
+                <p>Mark room boundaries yourself so DYH can carry forward explicit geometry without pretending uncertain measurements are confirmed.</p>
               </div>
-              <span className="coming-label">Next step</span>
+              <button className="secondary-button" type="button" onClick={() => setReviewMode(true)}>Review architecture</button>
             </div>
           </section>
         ) : (
