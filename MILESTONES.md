@@ -42,7 +42,7 @@ Upload arbitrary floor plan
 
 The milestone is complete only when the uploaded source is visibly used, the geometry is deterministic, the scene is navigable, options are spatially validated, and a follow-up edit preserves unrelated scene state.
 
-Current progress: the source intake route accepts PDF, JPG, and PNG files up to 25 MB, validates the file type and size, and renders the exact selected source in the browser. Upload state is intentionally session-only until project persistence is introduced.
+Current progress: the source intake route accepts PDF, JPG, and PNG files up to 25 MB, validates the file type and size, and renders the exact selected source in the browser. The review route now lets a homeowner mark room rectangles, name them, confirm them, and save the resulting versioned geometry in browser storage. Automatic parsing and server-backed project persistence remain intentionally separate follow-up work.
 
 ## Milestone 2 — homeowner context
 
